@@ -1,5 +1,7 @@
 from django.db import models
 from django.core.validators import MinValueValidator, MaxValueValidator
+
+
 class Ebook(models.Model):
     title = models.CharField(max_length=120)
     author = models.CharField(max_length=120)
