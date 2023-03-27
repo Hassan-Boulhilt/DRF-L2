@@ -18,5 +18,10 @@ class QuoteDetailAPIView(RetrieveUpdateDestroyAPIView):
     permission_classes = [IsAdminUserOrReadOnly]
     pagination_class = SmallSetPagination
     
+    def perform_create(self, serializer):
+        quote_author = self.request.user
+        serializer.save(quote_author=quote_author)
+        
+    
        
     
